@@ -29,6 +29,7 @@ namespace SSD_Components
 	class Data_Cache_Manager_Base;
 	class Host_Interface_Base;
 
+	// 输入的流信息
 	class Input_Stream_Base
 	{
 	public:
@@ -41,7 +42,7 @@ namespace SSD_Components
 		sim_time_type STAT_sum_of_read_transactions_execution_time, STAT_sum_of_read_transactions_transfer_time, STAT_sum_of_read_transactions_waiting_time;
 		sim_time_type STAT_sum_of_write_transactions_execution_time, STAT_sum_of_write_transactions_transfer_time, STAT_sum_of_write_transactions_waiting_time;
 	};
-
+	// 流信息管理器
 	class Input_Stream_Manager_Base
 	{
 		friend class Request_Fetch_Unit_Base;
@@ -88,7 +89,7 @@ namespace SSD_Components
 		Host_Interface_Base* host_interface;
 		std::list<DMA_Req_Item*> dma_list;
 	};
-
+	//主机接口的父类
 	class Host_Interface_Base : public MQSimEngine::Sim_Object, public MQSimEngine::Sim_Reporter
 	{
 		friend class Input_Stream_Manager_Base;
@@ -113,9 +114,9 @@ namespace SSD_Components
 		void Consume_pcie_message(Host_Components::PCIe_Message* message)
 		{
 			if (message->Type == Host_Components::PCIe_Message_Type::READ_COMP) {
-				request_fetch_unit->Process_pcie_read_message(message->Address, message->Payload, message->Payload_size);
+				request_fetch_unit->Process_pcie_read_message(message->Address, message->Payload, message->Payload_size); //请求第二次走这个函数
 			} else {
-				request_fetch_unit->Process_pcie_write_message(message->Address, message->Payload, message->Payload_size);
+				request_fetch_unit->Process_pcie_write_message(message->Address, message->Payload, message->Payload_size); // 请求第一次走这个函数
 			}
 			delete message;
 		}

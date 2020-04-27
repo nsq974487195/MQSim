@@ -137,7 +137,7 @@ namespace SSD_Components
 	{
 		transaction_receive_slots.push_back(transaction);
 	}
-
+	// read or write request enter into TSU module, 前面的所有请求都在这个里面进行排序
 	void TSU_OutOfOrder::Schedule()
 	{
 		opened_scheduling_reqs--;
@@ -161,7 +161,7 @@ namespace SSD_Components
 					switch ((*it)->Source) {
 						case Transaction_Source_Type::CACHE:
 						case Transaction_Source_Type::USERIO:
-							UserReadTRQueue[(*it)->Address.ChannelID][(*it)->Address.ChipID].push_back((*it));
+							UserReadTRQueue[(*it)->Address.ChannelID][(*it)->Address.ChipID].push_back((*it)); //进入不同的请求类型队列里面
 							break;
 						case Transaction_Source_Type::MAPPING:
 							MappingReadTRQueue[(*it)->Address.ChannelID][(*it)->Address.ChipID].push_back((*it));
@@ -196,7 +196,7 @@ namespace SSD_Components
 					break;
 			}
 		}
-
+	//依次遍历channel到队列，从里面选择相应的request进入队列
 		for (flash_channel_ID_type channelID = 0; channelID < channel_count; channelID++) {
 			if (_NVMController->Get_channel_status(channelID) == BusChannelStatus::IDLE) {
 				for (unsigned int i = 0; i < chip_no_per_channel; i++) {
@@ -216,7 +216,7 @@ namespace SSD_Components
 		}
 	}
 	
-	bool TSU_OutOfOrder::service_read_transaction(NVM::FlashMemory::Flash_Chip* chip)
+	bool TSU_OutOfOrder::service_read_transaction(NVM::FlashMemory::Flash_Chip* chip) // 从请求队列当中寻找满足条件的trans组合
 	{
 		Flash_Transaction_Queue *sourceQueue1 = NULL, *sourceQueue2 = NULL;
 
@@ -265,7 +265,7 @@ namespace SSD_Components
 		bool suspensionRequired = false;
 		ChipStatus cs = _NVMController->GetChipStatus(chip);
 		switch (cs) {
-			case ChipStatus::IDLE:
+			case ChipStatus::IDLE: //不支持Suspension commmand直接就会返回本次执行
 				break;
 			case ChipStatus::WRITING:
 				if (!programSuspensionEnabled || _NVMController->HasSuspendedCommand(chip)) {
@@ -325,7 +325,7 @@ namespace SSD_Components
 				}
 			}
 
-			if (transaction_dispatch_slots.size() > 0) {
+			if (transaction_dispatch_slots.size() > 0) { //这个事务已经不是已request为单位发送的，能够组合成高级命令的请求组合在一起
 				_NVMController->Send_command_to_chip(transaction_dispatch_slots);
 			}
 			transaction_dispatch_slots.clear();

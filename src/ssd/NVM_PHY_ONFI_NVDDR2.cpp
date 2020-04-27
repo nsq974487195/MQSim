@@ -128,7 +128,7 @@ namespace SSD_Components {
 		channels[page_address.ChannelID]->Chips[page_address.ChipID]->Change_memory_status_preconditioning(&page_address, &lpa);
 	}
 	
-	void NVM_PHY_ONFI_NVDDR2::Send_command_to_chip(std::list<NVM_Transaction_Flash*>& transaction_list)
+	void NVM_PHY_ONFI_NVDDR2::Send_command_to_chip(std::list<NVM_Transaction_Flash*>& transaction_list) //chip接受命令, 一次是单个任务组由多个可以并发执行的命令组成
 	{
 		ONFI_Channel_NVDDR2* target_channel = channels[transaction_list.front()->Address.ChannelID];
 
@@ -143,8 +143,8 @@ namespace SSD_Components {
 		}
 
 		sim_time_type suspendTime = 0;
-		if (!dieBKE->Free) {
-			if (transaction_list.front()->SuspendRequired) {
+		if (!dieBKE->Free) { // dieBKE->free的含义，是否free or busy
+			if (transaction_list.front()->SuspendRequired) { // 除非是支持suspension command
 				switch (dieBKE->ActiveTransactions.front()->Type) {
 					case Transaction_Type::WRITE:
 						Stats::IssuedSuspendProgramCMD++;
@@ -166,14 +166,14 @@ namespace SSD_Components {
 				PRINT_ERROR("Read suspension is not supported!")
 			}
 		}
-
+		//完成dieBKE的初始化，没有实现 interleave-die命令
 		dieBKE->Free = false;
 		dieBKE->ActiveCommand = new NVM::FlashMemory::Flash_Command();
 		for (std::list<NVM_Transaction_Flash*>::iterator it = transaction_list.begin();
 			it != transaction_list.end(); it++) {
 			dieBKE->ActiveTransactions.push_back(*it);
 			dieBKE->ActiveCommand->Address.push_back((*it)->Address);
-			NVM::FlashMemory::PageMetadata metadata;
+			NVM::FlashMemory::PageMetadata metadata; 
 			metadata.LPA = (*it)->LPA;
 			dieBKE->ActiveCommand->Meta_data.push_back(metadata);
 		}
@@ -194,7 +194,7 @@ namespace SSD_Components {
 					it != transaction_list.end(); it++) {
 					(*it)->STAT_transfer_time += target_channel->ReadCommandTime[transaction_list.size()];
 				}
-				if (chipBKE->OngoingDieCMDTransfers.size() == 0) {
+				if (chipBKE->OngoingDieCMDTransfers.size() == 0) { //die上面没有事务，则开始执行，否则入队列
 					targetChip->StartCMDXfer();
 					chipBKE->Status = ChipStatus::CMD_IN;
 					chipBKE->Last_transfer_finish_time = Simulator->Time() + suspendTime + target_channel->ReadCommandTime[transaction_list.size()];
@@ -240,7 +240,7 @@ namespace SSD_Components {
 						dieBKE->DieInterleavedTime = suspendTime + target_channel->ProgramCommandTime[transaction_list.size()] + data_transfer_time;
 						chipBKE->Last_transfer_finish_time += suspendTime + target_channel->ProgramCommandTime[transaction_list.size()] + data_transfer_time;
 					}
-					chipBKE->OngoingDieCMDTransfers.push(dieBKE);
+					chipBKE->OngoingDieCMDTransfers.push(dieBKE);//如果有请求，就把请求注册到事件
 
 					dieBKE->Expected_finish_time = chipBKE->Last_transfer_finish_time + targetChip->Get_command_execution_latency(dieBKE->ActiveCommand->CommandCode, dieBKE->ActiveCommand->Address[0].PageID);
 					if (chipBKE->Expected_command_exec_finish_time < dieBKE->Expected_finish_time) {
@@ -332,7 +332,7 @@ namespace SSD_Components {
 			i++;
 		}
 	}
-
+	//命令传输的时间，注册的时间，请求到这个地方停止了一下因为命令的传输
 	void NVM_PHY_ONFI_NVDDR2::Execute_simulator_event(MQSimEngine::Sim_Event* ev)
 	{
 		DieBookKeepingEntry* dieBKE = (DieBookKeepingEntry*)ev->Parameters;
@@ -350,8 +350,8 @@ namespace SSD_Components {
 				}
 				chipBKE->OngoingDieCMDTransfers.pop();
 				chipBKE->No_of_active_dies++;
-				if (chipBKE->OngoingDieCMDTransfers.size() > 0) {
-					perform_interleaved_cmd_data_transfer(targetChip, chipBKE->OngoingDieCMDTransfers.front());
+				if (chipBKE->OngoingDieCMDTransfers.size() > 0) { // size>0的情况？？？
+					perform_interleaved_cmd_data_transfer(targetChip, chipBKE->OngoingDieCMDTransfers.front());				
 					return;
 				} else {
 					chipBKE->Status = ChipStatus::READING;
@@ -486,7 +486,7 @@ namespace SSD_Components {
 		//If the execution reaches here, then the bus channel became idle
 		broadcastChannelIdleSignal(channel_id);
 	}
-
+	// chip完成command以后，开始调用这个函数
 	inline void NVM_PHY_ONFI_NVDDR2::handle_ready_signal_from_chip(NVM::FlashMemory::Flash_Chip* chip, NVM::FlashMemory::Flash_Command* command)
 	{
 		ChipBookKeepingEntry *chipBKE = &_my_instance->bookKeepingTable[chip->ChannelID][chip->ChipID];
@@ -614,7 +614,7 @@ namespace SSD_Components {
 			break;
 		}
 
-		if (_my_instance->channels[chip->ChannelID]->GetStatus() == BusChannelStatus::IDLE)
+		if (_my_instance->channels[chip->ChannelID]->GetStatus() == BusChannelStatus::IDLE) //channels或chips 状态是idle，通知上层处理 
 			_my_instance->broadcastChannelIdleSignal(chip->ChannelID);
 		else if (chipBKE->Status == ChipStatus::IDLE)
 			_my_instance->broadcastChipIdleSignal(chip);

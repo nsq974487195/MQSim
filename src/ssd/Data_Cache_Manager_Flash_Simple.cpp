@@ -50,7 +50,7 @@ namespace SSD_Components
 	{
 	}
 
-	void Data_Cache_Manager_Flash_Simple::process_new_user_request(User_Request* user_request)
+	void Data_Cache_Manager_Flash_Simple::process_new_user_request(User_Request* user_request) // user_request里面包括了transactions list 
 	{
 		//This condition shouldn't happen, but we check it
 		if (user_request->Transaction_list.size() == 0) {
@@ -68,7 +68,8 @@ namespace SSD_Components
 					std::list<NVM_Transaction*>::iterator it = user_request->Transaction_list.begin();
 					while (it != user_request->Transaction_list.end()) {
 						NVM_Transaction_Flash_RD* tr = (NVM_Transaction_Flash_RD*)(*it);
-						if (data_cache->Exists(tr->Stream_id, tr->LPA)) {
+						//缓冲命中
+						if (data_cache->Exists(tr->Stream_id, tr->LPA)) { 
 							page_status_type available_sectors_bitmap = data_cache->Get_slot(tr->Stream_id, tr->LPA).State_bitmap_of_existing_sectors & tr->read_sectors_bitmap;
 							if (available_sectors_bitmap == tr->read_sectors_bitmap) {
 								user_request->Sectors_serviced_from_cache += count_sector_no_from_status_bitmap(tr->read_sectors_bitmap);
@@ -204,7 +205,7 @@ namespace SSD_Components
 			next_bloom_filter_reset_milestone = Simulator->Time() + bloom_filter_reset_step;
 		}
 	}
-
+	//从chip读取或者写入完成后，通知上层的cache完成后续的任务
 	void Data_Cache_Manager_Flash_Simple::handle_transaction_serviced_signal_from_PHY(NVM_Transaction_Flash* transaction)
 	{
 		//First check if the transaction source is a user request or the cache itself
@@ -213,7 +214,7 @@ namespace SSD_Components
 		}
 
 		if (transaction->Source == Transaction_Source_Type::USERIO)
-			_my_instance->broadcast_user_memory_transaction_serviced_signal(transaction);
+			_my_instance->broadcast_user_memory_transaction_serviced_signal(transaction); //完成以后更新统计信息
 		/* This is an update read (a read that is generated for a write request that partially updates page data).
 		*  An update read transaction is issued in Address Mapping Unit, but is consumed in data cache manager.*/
 		if (transaction->Type == Transaction_Type::READ) {
@@ -225,9 +226,9 @@ namespace SSD_Components
 			{
 				case Caching_Mode::TURNED_OFF:
 				case Caching_Mode::WRITE_CACHE:
-					transaction->UserIORequest->Transaction_list.remove(transaction);
+					transaction->UserIORequest->Transaction_list.remove(transaction); // 把本次完成的transaction从 request的list当中删除
 					if (_my_instance->is_user_request_finished(transaction->UserIORequest)) {
-						_my_instance->broadcast_user_request_serviced_signal(transaction->UserIORequest);
+						_my_instance->broadcast_user_request_serviced_signal(transaction->UserIORequest); //如果完成了则进一步通知上层应用
 					}
 					break;
 				default:

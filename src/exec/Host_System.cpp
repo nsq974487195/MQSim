@@ -28,7 +28,7 @@ Host_System::Host_System(Host_Parameter_Set* parameters, bool preconditioning_re
 
 	//Create IO flows
 	LHA_type address_range_per_flow = ssd_host_interface->Get_max_logical_sector_address() / parameters->IO_Flow_Definitions.size();
-	for (uint16_t flow_id = 0; flow_id < parameters->IO_Flow_Definitions.size(); flow_id++) {
+	for (uint16_t flow_id = 0; flow_id < parameters->IO_Flow_Definitions.size(); flow_id++) { // the number of IO_flow
 		Host_Components::IO_Flow_Base* io_flow = NULL;
 		//No flow should ask for I/O queue id 0, it is reserved for NVMe Admin command queue pair
 		//Hence, we use flow_id + 1 (which is equal to 1, 2, ...) as the requested I/O queue id

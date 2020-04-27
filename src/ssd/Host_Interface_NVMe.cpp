@@ -38,7 +38,7 @@ namespace SSD_Components
 		((Input_Stream_NVMe*)input_streams[stream_id])->Submission_tail = tail_pointer_value;
 
 		if (((Input_Stream_NVMe*)input_streams[stream_id])->On_the_fly_requests < Queue_fetch_size) {
-			((Host_Interface_NVMe*)host_interface)->request_fetch_unit->Fetch_next_request(stream_id);
+			((Host_Interface_NVMe*)host_interface)->request_fetch_unit->Fetch_next_request(stream_id); //从 submission队列当中获取一个请求与PCIe Root Complex需要读写的数据
 			((Input_Stream_NVMe*)input_streams[stream_id])->On_the_fly_requests++;
 			((Input_Stream_NVMe*)input_streams[stream_id])->Submission_head++;//Update submission queue head after starting fetch request
 			if (((Input_Stream_NVMe*)input_streams[stream_id])->Submission_head == ((Input_Stream_NVMe*)input_streams[stream_id])->Submission_queue_size) {//Circular queue implementation
@@ -65,7 +65,7 @@ namespace SSD_Components
 		if (((Input_Stream_NVMe*)input_streams[request->Stream_id])->Submission_head_informed_to_host == ((Input_Stream_NVMe*)input_streams[request->Stream_id])->Submission_queue_size) {//Circular queue implementation
 			((Input_Stream_NVMe*)input_streams[request->Stream_id])->Submission_head_informed_to_host = 0;
 		}
-		if (request->Type == UserRequestType::READ) {
+		if (request->Type == UserRequestType::READ) { //处理读请求入口
 			((Input_Stream_NVMe*)input_streams[request->Stream_id])->Waiting_user_requests.push_back(request);
 			((Input_Stream_NVMe*)input_streams[request->Stream_id])->STAT_number_of_read_requests++;
 			segment_user_request(request);
@@ -78,13 +78,13 @@ namespace SSD_Components
 		}
 	}
 
-	inline void Input_Stream_Manager_NVMe::Handle_arrived_write_data(User_Request* request)
+	inline void Input_Stream_Manager_NVMe::Handle_arrived_write_data(User_Request* request) 
 	{
-		segment_user_request(request);
+		segment_user_request(request); //处理写请求入口
 		((Host_Interface_NVMe*)host_interface)->broadcast_user_request_arrival_signal(request);
 	}
 
-	inline void Input_Stream_Manager_NVMe::Handle_serviced_request(User_Request* request)
+	inline void Input_Stream_Manager_NVMe::Handle_serviced_request(User_Request* request) //处理完成的IO request
 	{
 		stream_id_type stream_id = request->Stream_id;
 		((Input_Stream_NVMe*)input_streams[request->Stream_id])->Waiting_user_requests.remove(request);
@@ -149,7 +149,7 @@ namespace SSD_Components
 		}
 	}
 	
-	void Input_Stream_Manager_NVMe::segment_user_request(User_Request* user_request)
+	void Input_Stream_Manager_NVMe::segment_user_request(User_Request* user_request) //读请求和写请求的预处理，切割成符合要求的子请求(事务)
 	{
 		LHA_type lsa = user_request->Start_LBA;
 		LHA_type lsa2 = user_request->Start_LBA;
@@ -196,7 +196,7 @@ namespace SSD_Components
 	Request_Fetch_Unit_NVMe::Request_Fetch_Unit_NVMe(Host_Interface_Base* host_interface) :
 		Request_Fetch_Unit_Base(host_interface), current_phase(0xffff), number_of_sent_cqe(0) {}
 	
-	void Request_Fetch_Unit_NVMe::Process_pcie_write_message(uint64_t address, void * payload, unsigned int payload_size)
+	void Request_Fetch_Unit_NVMe::Process_pcie_write_message(uint64_t address, void * payload, unsigned int payload_size) //不同的IO_flow有其自己的 submission和completion register
 	{
 		Host_Interface_NVMe* hi = (Host_Interface_NVMe*)host_interface;
 		uint64_t val = (uint64_t)payload;
@@ -255,7 +255,7 @@ namespace SSD_Components
 		}
 	}
 	
-	void Request_Fetch_Unit_NVMe::Process_pcie_read_message(uint64_t address, void * payload, unsigned int payload_size)
+	void Request_Fetch_Unit_NVMe::Process_pcie_read_message(uint64_t address, void * payload, unsigned int payload_size)  // 读请求分为两步：第一步 发送请求入队列，第二步 向PCIe ROOT Complex请求相应的数据
 	{
 		Host_Interface_NVMe* hi = (Host_Interface_NVMe*)host_interface;
 		DMA_Req_Item* dma_req_item = dma_list.front();
@@ -264,7 +264,7 @@ namespace SSD_Components
 		switch (dma_req_item->Type) {
 			case DMA_Req_Type::REQUEST_INFO:
 			{
-				User_Request* new_reqeust = new User_Request;
+				User_Request* new_reqeust = new User_Request; // 前期是PCIe message, 从这一步开始用户request 形成
 				new_reqeust->IO_command_info = payload;
 				new_reqeust->Stream_id = (stream_id_type)((uint64_t)(dma_req_item->object));
 				new_reqeust->Priority_class = ((Input_Stream_Manager_NVMe*)host_interface->input_stream_manager)->Get_priority_class(new_reqeust->Stream_id);
@@ -287,12 +287,12 @@ namespace SSD_Components
 					default:
 						throw std::invalid_argument("NVMe command is not supported!");
 				}
-				((Input_Stream_Manager_NVMe*)(hi->input_stream_manager))->Handle_new_arrived_request(new_reqeust);
+				((Input_Stream_Manager_NVMe*)(hi->input_stream_manager))->Handle_new_arrived_request(new_reqeust);  // 写请求有三步： 这是第二步
 				break;
 			}
 			case DMA_Req_Type::WRITE_DATA:
 				COPYDATA(((User_Request*)dma_req_item->object)->Data, payload, payload_size);
-				((Input_Stream_Manager_NVMe*)(hi->input_stream_manager))->Handle_arrived_write_data((User_Request*)dma_req_item->object);
+				((Input_Stream_Manager_NVMe*)(hi->input_stream_manager))->Handle_arrived_write_data((User_Request*)dma_req_item->object); // 写请求的第三步
 				break;
 			default:
 				break;

@@ -477,18 +477,19 @@ namespace SSD_Components
 		return domains[stream_id]->No_of_inserted_entries_in_preconditioning;
 	}
 
-	void Address_Mapping_Unit_Page_Level::Translate_lpa_to_ppa_and_dispatch(const std::list<NVM_Transaction*>& transactionList)
-	{
+	void Address_Mapping_Unit_Page_Level::Translate_lpa_to_ppa_and_dispatch(const std::list<NVM_Transaction*>& transactionList) //从DATE Cache转换的事务列表
+	{	
+		//查询read request的 PPN 为write 分配PPN
 		for (std::list<NVM_Transaction*>::const_iterator it = transactionList.begin();
 			it != transactionList.end(); ) {
 			if (is_lpa_locked_for_gc((*it)->Stream_id, ((NVM_Transaction_Flash*)(*it))->LPA)) {
 				//iterator should be post-incremented since the iterator may be deleted from list
-				manage_user_transaction_facing_barrier((NVM_Transaction_Flash*)*(it++));
+				manage_user_transaction_facing_barrier((NVM_Transaction_Flash*)*(it++)); //插入到请求列表等待后续服务
 			} else {
 				query_cmt((NVM_Transaction_Flash*)(*it++));
 			}
 		}
-
+		//核心部分
 		if (transactionList.size() > 0) {
 			ftl->TSU->Prepare_for_transaction_submit();
 			for (std::list<NVM_Transaction*>::const_iterator it = transactionList.begin();
@@ -506,7 +507,7 @@ namespace SSD_Components
 			ftl->TSU->Schedule();
 		}
 	}
-
+	//读写请求查询 mapping table
 	bool Address_Mapping_Unit_Page_Level::query_cmt(NVM_Transaction_Flash* transaction)
 	{
 		stream_id_type stream_id = transaction->Stream_id;
@@ -586,12 +587,12 @@ namespace SSD_Components
 		PPA_type ppa = domains[streamID]->Get_ppa(ideal_mapping_table, streamID, transaction->LPA);
 
 		if (transaction->Type == Transaction_Type::READ) {
-			if (ppa == NO_PPA) {
+			if (ppa == NO_PPA) { //异常处理，没有分配的PPA，则临时分配一个PPA
 				ppa = online_create_entry_for_reads(transaction->LPA, streamID, transaction->Address, ((NVM_Transaction_Flash_RD*)transaction)->read_sectors_bitmap);
 			}
 			transaction->PPA = ppa;
 			Convert_ppa_to_address(transaction->PPA, transaction->Address);
-			block_manager->Read_transaction_issued(transaction->Address);
+			block_manager->Read_transaction_issued(transaction->Address); 
 			transaction->Physical_address_determined = true;
 			
 			return true;
@@ -1170,6 +1171,7 @@ namespace SSD_Components
 					Convert_ppa_to_address(old_ppa, addr);
 					block_manager->Invalidate_page_in_block(transaction->Stream_id, addr);
 				} else {
+					//写请求之前提出 读请求
 					page_status_type read_pages_bitmap = status_intersection ^ prev_page_status;
 					NVM_Transaction_Flash_RD *update_read_tr = new NVM_Transaction_Flash_RD(transaction->Source, transaction->Stream_id,
 						count_sector_no_from_status_bitmap(read_pages_bitmap) * SECTOR_SIZE_IN_BYTE, transaction->LPA, old_ppa, transaction->UserIORequest,

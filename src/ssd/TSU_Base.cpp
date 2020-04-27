@@ -41,7 +41,7 @@ namespace SSD_Components
 	{
 		//TSU does nothing. The generator of the transaction will handle it.
 	}
-
+	//收到channel idle信号，则开始下一轮的处理
 	void TSU_Base::handle_channel_idle_signal(flash_channel_ID_type channelID)
 	{
 		for (unsigned int i = 0; i < _my_instance->chip_no_per_channel; i++) {

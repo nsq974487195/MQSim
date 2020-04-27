@@ -31,11 +31,11 @@ namespace NVM
 			flash_channel_ID_type ChannelID;
 			flash_chip_ID_type ChipID;         //Flashchip position in its related channel
 
-			void StartCMDXfer()
+			void StartCMDXfer() // read and erase command
 			{
 				this->lastTransferStart = Simulator->Time();
 			}
-			void StartCMDDataInXfer()
+			void StartCMDDataInXfer() //program command
 			{
 				this->lastTransferStart = Simulator->Time();
 			}
@@ -43,7 +43,7 @@ namespace NVM
 			{
 				this->lastTransferStart = Simulator->Time();
 			}
-			void EndCMDXfer(Flash_Command* command)//End transferring write data to the Flash chip
+			void EndCMDXfer(Flash_Command* command)//End transferring write data to the Flash chip, 命令传输完成，开始chip内部执行
 			{
 				this->STAT_totalXferTime += (Simulator->Time() - this->lastTransferStart);
 				if (this->idleDieNo != die_no)

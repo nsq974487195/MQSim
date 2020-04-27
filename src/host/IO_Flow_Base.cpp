@@ -32,7 +32,7 @@ namespace Host_Components
 					available_command_ids.insert(cmdid);
 				}
 				for (uint16_t cmdid = 0; cmdid < nvme_submission_queue_size; cmdid++) {
-					request_queue_in_memory.push_back(t);
+					request_queue_in_memory.push_back(t); // t是什么意思
 				}
 				nvme_queue_pair.Submission_queue_size = nvme_submission_queue_size;
 				nvme_queue_pair.Submission_queue_head = 0;
@@ -241,7 +241,7 @@ namespace Host_Components
 		}
 	}
 
-	void IO_Flow_Base::NVMe_consume_io_request(Completion_Queue_Entry* cqe)
+	void IO_Flow_Base::NVMe_consume_io_request(Completion_Queue_Entry* cqe) //统计处理的时间，从NVMe 完成队列
 	{
 		//Find the request and update statistics
 		Host_IO_Request* request = nvme_software_request_queue[cqe->Command_Identifier];
@@ -403,7 +403,7 @@ namespace Host_Components
 	{
 		switch (SSD_device_type) {
 			case HostInterface_Types::NVME:
-				//If either of software or hardware queue is full
+				//If either of software or hardware queue is full 
 				if (NVME_SQ_FULL(nvme_queue_pair) || available_command_ids.size() == 0) {
 					waiting_requests.push_back(request);
 				} else {

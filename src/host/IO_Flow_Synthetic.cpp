@@ -214,7 +214,7 @@ namespace Host_Components
 	void IO_Flow_Synthetic::Execute_simulator_event(MQSimEngine::Sim_Event* event)
 	{
 		if (generator_type == Utils::Request_Generator_Type::BANDWIDTH) {
-			Host_IO_Request* req = Generate_next_request();
+			Host_IO_Request* req = Generate_next_request(); // 循环往复的生成新的请求，然后在仿真器插入随机时间的请求，执行新的请求，随后添加新的事件
 			if (req != NULL) {
 				Submit_io_request(req);
 				Simulator->Register_sim_event(Simulator->Time() + (sim_time_type)random_time_interval_generator->Exponential((double)Average_inter_arrival_time_nano_sec), this, 0, 0);

@@ -43,7 +43,7 @@ namespace SSD_Components
 		delete input_stream_manager;
 		delete request_fetch_unit;
 	}
-
+	//触发底层开始处理请求和事务？
 	void Host_Interface_Base::Setup_triggers()
 	{
 		Sim_Object::Setup_triggers();

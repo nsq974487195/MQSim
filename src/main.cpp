@@ -273,7 +273,7 @@ int main(int argc, char* argv[])
 	std::vector<std::vector<IO_Flow_Parameter_Set*>*>* io_scenarios = read_workload_definitions(workload_defs_file_path);
 
 	int cntr = 1;
-	for (auto io_scen = io_scenarios->begin(); io_scen != io_scenarios->end(); io_scen++, cntr++) {
+	for (auto io_scen = io_scenarios->begin(); io_scen != io_scenarios->end(); io_scen++, cntr++) { // one io_scenarios includes many scenario
 		time_t start_time = time(0);
 		char* dt = ctime(&start_time);
 		PRINT_MESSAGE("MQSim started at " << dt)
@@ -284,7 +284,7 @@ int main(int argc, char* argv[])
 		Simulator->Reset();
 
 		exec_params->Host_Configuration.IO_Flow_Definitions.clear();
-		for (auto io_flow_def = (*io_scen)->begin(); io_flow_def != (*io_scen)->end(); io_flow_def++) {
+		for (auto io_flow_def = (*io_scen)->begin(); io_flow_def != (*io_scen)->end(); io_flow_def++) { // each scenario contains some workloads.
 			exec_params->Host_Configuration.IO_Flow_Definitions.push_back(*io_flow_def);
 		}
 

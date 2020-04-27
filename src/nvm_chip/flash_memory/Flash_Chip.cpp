@@ -126,8 +126,8 @@ namespace NVM
 
 			DEBUG("Command execution started on channel: " << this->ChannelID << " chip: " << this->ChipID)
 		}
-
-		void Flash_Chip::finish_command_execution(Flash_Command* command)
+		//命令执行完成以后进行收尾工作，read request的数据传输回主机， write request完成以后释放相应的资源
+		void Flash_Chip::finish_command_execution(Flash_Command* command) 
 		{
 			Die* targetDie = Dies[command->Address[0].DieID];
 
@@ -138,7 +138,7 @@ namespace NVM
 			targetDie->Status = DieStatus::IDLE;
 			this->idleDieNo++;
 			if (idleDieNo == die_no) {
-				this->status = Internal_Status::IDLE;
+				this->status = Internal_Status::IDLE; //chip都是空闲的
 				STAT_totalExecTime += Simulator->Time() - executionStartTime;
 				if (this->lastTransferStart != INVALID_TIME) {
 					STAT_totalOverlappedXferExecTime += Simulator->Time() - lastTransferStart;
