@@ -44,19 +44,23 @@ namespace SSD_Components
 	//收到channel idle信号，则开始下一轮的处理
 	void TSU_Base::handle_channel_idle_signal(flash_channel_ID_type channelID)
 	{
-		for (unsigned int i = 0; i < _my_instance->chip_no_per_channel; i++) {
-			NVM::FlashMemory::Flash_Chip* chip = _my_instance->_NVMController->Get_chip(channelID, _my_instance->Round_robin_turn_of_channel[channelID]);
-			//The TSU does not check if the chip is idle or not since it is possible to suspend a busy chip and issue a new command
-			if (!_my_instance->service_read_transaction(chip)) {
-				if (!_my_instance->service_write_transaction(chip)) {
-					_my_instance->service_erase_transaction(chip);
-				}
-			}
-			_my_instance->Round_robin_turn_of_channel[channelID] = (flash_chip_ID_type)(_my_instance->Round_robin_turn_of_channel[channelID] + 1) % _my_instance->chip_no_per_channel;
+		for (flash_channel_ID_type channelID = 0; channelID < _my_instance->channel_count; channelID++) {
+			if (_my_instance->_NVMController->Get_channel_status(channelID) == BusChannelStatus::IDLE) {
+				for (unsigned int i = 0; i < _my_instance->chip_no_per_channel; i++) {
+					NVM::FlashMemory::Flash_Chip* chip = _my_instance->_NVMController->Get_chip(channelID, _my_instance->Round_robin_turn_of_channel[channelID]);
+					//The TSU does not check if the chip is idle or not since it is possible to suspend a busy chip and issue a new command
+					if (!_my_instance->service_read_transaction(chip)) {
+						if (!_my_instance->service_write_transaction(chip)) {
+							_my_instance->service_erase_transaction(chip);
+						}
+					}
+					_my_instance->Round_robin_turn_of_channel[channelID] = (flash_chip_ID_type)(_my_instance->Round_robin_turn_of_channel[channelID] + 1) % _my_instance->chip_no_per_channel;
 
-			//A transaction has been started, so TSU should stop searching for another chip
-			if (_my_instance->_NVMController->Get_channel_status(chip->ChannelID) == BusChannelStatus::BUSY) {
-				break;
+					//A transaction has been started, so TSU should stop searching for another chip
+					if (_my_instance->_NVMController->Get_channel_status(chip->ChannelID) == BusChannelStatus::BUSY) {
+						break;
+					}
+				}
 			}
 		}
 	}

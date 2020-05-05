@@ -566,7 +566,11 @@ namespace SSD_Components {
 				targetTransaction->STAT_TransferTime += NVDDR2DataOutTransferTime(targetTransaction->SizeInByte, channels[targetChip->ChannelID]);
 #endif
 			}
-			else _my_instance->WaitingCopybackWrites->push_back(dieBKE);
+			else {
+				_my_instance->WaitingCopybackWrites->push_back(dieBKE);
+
+				PRINT_MESSAGE("WaitingCopybackWrites");
+			}
 			break;
 		case CMD_PROGRAM_PAGE:
 		case CMD_PROGRAM_PAGE_MULTIPLANE:
@@ -615,9 +619,18 @@ namespace SSD_Components {
 		}
 
 		if (_my_instance->channels[chip->ChannelID]->GetStatus() == BusChannelStatus::IDLE) //channels或chips 状态是idle，通知上层处理 
+		{	
 			_my_instance->broadcastChannelIdleSignal(chip->ChannelID);
-		else if (chipBKE->Status == ChipStatus::IDLE)
-			_my_instance->broadcastChipIdleSignal(chip);
+
+			//PRINT_MESSAGE("broadcastChannelIdleSignal");
+		}
+		//else if (chipBKE->Status == ChipStatus::IDLE)
+		//{
+		//	_my_instance->broadcastChipIdleSignal(chip);
+		//	
+		//	PRINT_MESSAGE("broadcastChipIdleSignal");
+		//}
+			
 	}
 
 	inline void NVM_PHY_ONFI_NVDDR2::transfer_read_data_from_chip(ChipBookKeepingEntry* chipBKE, DieBookKeepingEntry* dieBKE, NVM_Transaction_Flash* tr)

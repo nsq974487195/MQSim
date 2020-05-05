@@ -236,7 +236,7 @@ void collect_results(SSD_Device& ssd, Host_System& host, const char* output_file
 	std::string tmp("MQSim_Results");
 	xmlwriter.Write_open_tag(tmp);
 	
-	host.Report_results_in_XML("", xmlwriter);
+	host.Report_results_in_XML("", xmlwriter); //bug 所有的trace是否停止时间都一样
 	ssd.Report_results_in_XML("", xmlwriter);
 
 	xmlwriter.Write_close_tag();

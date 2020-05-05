@@ -2,67 +2,67 @@
 <MQSim_Results>
 	<Host>
 		<Host.IO_Flow>
-				 <Name>Host.IO_Flow.Trace.traces/PRN_0</Name>
+				 <Name>Host.IO_Flow.Synth.No_0</Name>
 				 <Request_Count>1000001</Request_Count>
-				 <Read_Request_Count>106344</Read_Request_Count>
-				 <Write_Request_Count>893657</Write_Request_Count>
-				 <IOPS>3436.429553</IOPS>
-				 <IOPS_Read>365.443299</IOPS_Read>
-				 <IOPS_Write>3070.986254</IOPS_Write>
-				 <Bytes_Transferred>15642910720.000000</Bytes_Transferred>
-				 <Bytes_Transferred_Read>2891603968.000000</Bytes_Transferred_Read>
-				 <Bytes_Transferred_Write>12751306752.000000</Bytes_Transferred_Write>
-				 <Bandwidth>53755706.941581</Bandwidth>
-				 <Bandwidth_Read>9936783.395189</Bandwidth_Read>
-				 <Bandwidth_Write>43818923.546392</Bandwidth_Write>
-				 <Device_Response_Time>18862027</Device_Response_Time>
-				 <Min_Device_Response_Time>120</Min_Device_Response_Time>
-				 <Max_Device_Response_Time>156288652</Max_Device_Response_Time>
-				 <End_to_End_Request_Delay>228464217</End_to_End_Request_Delay>
-				 <Min_End_to_End_Request_Delay>120</Min_End_to_End_Request_Delay>
-				 <Max_End_to_End_Request_Delay>291664172</Max_End_to_End_Request_Delay>
+				 <Read_Request_Count>500543</Read_Request_Count>
+				 <Write_Request_Count>499458</Write_Request_Count>
+				 <IOPS>7751.945736</IOPS>
+				 <IOPS_Read>3880.178295</IOPS_Read>
+				 <IOPS_Write>3871.767442</IOPS_Write>
+				 <Bytes_Transferred>12288012288.000000</Bytes_Transferred>
+				 <Bytes_Transferred_Read>6150672384.000000</Bytes_Transferred_Read>
+				 <Bytes_Transferred_Write>6137339904.000000</Bytes_Transferred_Write>
+				 <Bandwidth>95255909.209302</Bandwidth>
+				 <Bandwidth_Read>47679630.883721</Bandwidth_Read>
+				 <Bandwidth_Write>47576278.325581</Bandwidth_Write>
+				 <Device_Response_Time>8270959</Device_Response_Time>
+				 <Min_Device_Response_Time>1994</Min_Device_Response_Time>
+				 <Max_Device_Response_Time>13231042</Max_Device_Response_Time>
+				 <End_to_End_Request_Delay>67796762</End_to_End_Request_Delay>
+				 <Min_End_to_End_Request_Delay>1994</Min_End_to_End_Request_Delay>
+				 <Max_End_to_End_Request_Delay>119094148</Max_End_to_End_Request_Delay>
 		</Host.IO_Flow>
 		<Host.IO_Flow>
-				 <Name>Host.IO_Flow.Trace.traces/PROJ_1</Name>
+				 <Name>Host.IO_Flow.Synth.No_1</Name>
 				 <Request_Count>1000001</Request_Count>
-				 <Read_Request_Count>906644</Read_Request_Count>
-				 <Write_Request_Count>93357</Write_Request_Count>
-				 <IOPS>3436.429553</IOPS>
-				 <IOPS_Read>3115.615120</IOPS_Read>
-				 <IOPS_Write>320.814433</IOPS_Write>
-				 <Bytes_Transferred>42446950400.000000</Bytes_Transferred>
-				 <Bytes_Transferred_Read>40321794048.000000</Bytes_Transferred_Read>
-				 <Bytes_Transferred_Write>2125156352.000000</Bytes_Transferred_Write>
-				 <Bandwidth>145865808.934708</Bandwidth>
-				 <Bandwidth_Read>138562866.144330</Bandwidth_Read>
-				 <Bandwidth_Write>7302942.790378</Bandwidth_Write>
-				 <Device_Response_Time>12729540</Device_Response_Time>
-				 <Min_Device_Response_Time>2613</Min_Device_Response_Time>
-				 <Max_Device_Response_Time>30444746</Max_Device_Response_Time>
-				 <End_to_End_Request_Delay>87708394</End_to_End_Request_Delay>
-				 <Min_End_to_End_Request_Delay>2613</Min_End_to_End_Request_Delay>
-				 <Max_End_to_End_Request_Delay>203728778</Max_End_to_End_Request_Delay>
+				 <Read_Request_Count>500543</Read_Request_Count>
+				 <Write_Request_Count>499458</Write_Request_Count>
+				 <IOPS>7751.945736</IOPS>
+				 <IOPS_Read>3880.178295</IOPS_Read>
+				 <IOPS_Write>3871.767442</IOPS_Write>
+				 <Bytes_Transferred>12288012288.000000</Bytes_Transferred>
+				 <Bytes_Transferred_Read>6150672384.000000</Bytes_Transferred_Read>
+				 <Bytes_Transferred_Write>6137339904.000000</Bytes_Transferred_Write>
+				 <Bandwidth>95255909.209302</Bandwidth>
+				 <Bandwidth_Read>47679630.883721</Bandwidth_Read>
+				 <Bandwidth_Write>47576278.325581</Bandwidth_Write>
+				 <Device_Response_Time>8148480</Device_Response_Time>
+				 <Min_Device_Response_Time>1254</Min_Device_Response_Time>
+				 <Max_Device_Response_Time>12183119</Max_Device_Response_Time>
+				 <End_to_End_Request_Delay>66131540</End_to_End_Request_Delay>
+				 <Min_End_to_End_Request_Delay>1254</Min_End_to_End_Request_Delay>
+				 <Max_End_to_End_Request_Delay>117363744</Max_End_to_End_Request_Delay>
 		</Host.IO_Flow>
 		<Host.IO_Flow>
-				 <Name>Host.IO_Flow.Trace.traces/PROJ_3</Name>
+				 <Name>Host.IO_Flow.Trace.traces/PRN_1</Name>
 				 <Request_Count>1000001</Request_Count>
-				 <Read_Request_Count>903390</Read_Request_Count>
-				 <Write_Request_Count>96611</Write_Request_Count>
-				 <IOPS>3436.429553</IOPS>
-				 <IOPS_Read>3104.432990</IOPS_Read>
-				 <IOPS_Write>331.996564</IOPS_Write>
-				 <Bytes_Transferred>16886226944.000000</Bytes_Transferred>
-				 <Bytes_Transferred_Read>13904007168.000000</Bytes_Transferred_Read>
-				 <Bytes_Transferred_Write>2982219776.000000</Bytes_Transferred_Write>
-				 <Bandwidth>58028271.285223</Bandwidth>
-				 <Bandwidth_Read>47780093.360825</Bandwidth_Read>
-				 <Bandwidth_Write>10248177.924399</Bandwidth_Write>
-				 <Device_Response_Time>6686006</Device_Response_Time>
-				 <Min_Device_Response_Time>104</Min_Device_Response_Time>
-				 <Max_Device_Response_Time>27254750</Max_Device_Response_Time>
-				 <End_to_End_Request_Delay>40742602</End_to_End_Request_Delay>
-				 <Min_End_to_End_Request_Delay>104</Min_End_to_End_Request_Delay>
-				 <Max_End_to_End_Request_Delay>103765278</Max_End_to_End_Request_Delay>
+				 <Read_Request_Count>691518</Read_Request_Count>
+				 <Write_Request_Count>308483</Write_Request_Count>
+				 <IOPS>7751.945736</IOPS>
+				 <IOPS_Read>5360.604651</IOPS_Read>
+				 <IOPS_Write>2391.341085</IOPS_Write>
+				 <Bytes_Transferred>17326919680.000000</Bytes_Transferred>
+				 <Bytes_Transferred_Read>12973637632.000000</Bytes_Transferred_Read>
+				 <Bytes_Transferred_Write>4353282048.000000</Bytes_Transferred_Write>
+				 <Bandwidth>134317206.821705</Bandwidth>
+				 <Bandwidth_Read>100570834.356589</Bandwidth_Read>
+				 <Bandwidth_Write>33746372.465116</Bandwidth_Write>
+				 <Device_Response_Time>4631076</Device_Response_Time>
+				 <Min_Device_Response_Time>207</Min_Device_Response_Time>
+				 <Max_Device_Response_Time>8744147</Max_Device_Response_Time>
+				 <End_to_End_Request_Delay>37667619</End_to_End_Request_Delay>
+				 <Min_End_to_End_Request_Delay>207</Min_End_to_End_Request_Delay>
+				 <Max_End_to_End_Request_Delay>73899058</Max_End_to_End_Request_Delay>
 		</Host.IO_Flow>
 	</Host>
 	<SSDDevice>
@@ -70,72 +70,72 @@
 				 <Name>SSDDevice.HostInterface</Name>
 			<SSDDevice.IO_Stream>
 					 <Stream_ID>0</Stream_ID>
-					 <Average_Read_Transaction_Turnaround_Time>2825</Average_Read_Transaction_Turnaround_Time>
-					 <Average_Read_Transaction_Execution_Time>201</Average_Read_Transaction_Execution_Time>
-					 <Average_Read_Transaction_Transfer_Time>42</Average_Read_Transaction_Transfer_Time>
-					 <Average_Read_Transaction_Waiting_Time>2580</Average_Read_Transaction_Waiting_Time>
-					 <Average_Write_Transaction_Turnaround_Time>88766</Average_Write_Transaction_Turnaround_Time>
+					 <Average_Read_Transaction_Turnaround_Time>519</Average_Read_Transaction_Turnaround_Time>
+					 <Average_Read_Transaction_Execution_Time>79</Average_Read_Transaction_Execution_Time>
+					 <Average_Read_Transaction_Transfer_Time>19</Average_Read_Transaction_Transfer_Time>
+					 <Average_Read_Transaction_Waiting_Time>421</Average_Read_Transaction_Waiting_Time>
+					 <Average_Write_Transaction_Turnaround_Time>104497</Average_Write_Transaction_Turnaround_Time>
 					 <Average_Write_Transaction_Execution_Time>750</Average_Write_Transaction_Execution_Time>
 					 <Average_Write_Transaction_Transfer_Time>19</Average_Write_Transaction_Transfer_Time>
-					 <Average_Write_Transaction_Waiting_Time>87997</Average_Write_Transaction_Waiting_Time>
+					 <Average_Write_Transaction_Waiting_Time>103728</Average_Write_Transaction_Waiting_Time>
 			</SSDDevice.IO_Stream>
 			<SSDDevice.IO_Stream>
 					 <Stream_ID>1</Stream_ID>
-					 <Average_Read_Transaction_Turnaround_Time>10373</Average_Read_Transaction_Turnaround_Time>
-					 <Average_Read_Transaction_Execution_Time>76</Average_Read_Transaction_Execution_Time>
-					 <Average_Read_Transaction_Transfer_Time>21</Average_Read_Transaction_Transfer_Time>
-					 <Average_Read_Transaction_Waiting_Time>10276</Average_Read_Transaction_Waiting_Time>
-					 <Average_Write_Transaction_Turnaround_Time>609348</Average_Write_Transaction_Turnaround_Time>
+					 <Average_Read_Transaction_Turnaround_Time>517</Average_Read_Transaction_Turnaround_Time>
+					 <Average_Read_Transaction_Execution_Time>79</Average_Read_Transaction_Execution_Time>
+					 <Average_Read_Transaction_Transfer_Time>19</Average_Read_Transaction_Transfer_Time>
+					 <Average_Read_Transaction_Waiting_Time>418</Average_Read_Transaction_Waiting_Time>
+					 <Average_Write_Transaction_Turnaround_Time>105305</Average_Write_Transaction_Turnaround_Time>
 					 <Average_Write_Transaction_Execution_Time>750</Average_Write_Transaction_Execution_Time>
 					 <Average_Write_Transaction_Transfer_Time>19</Average_Write_Transaction_Transfer_Time>
-					 <Average_Write_Transaction_Waiting_Time>608579</Average_Write_Transaction_Waiting_Time>
+					 <Average_Write_Transaction_Waiting_Time>104535</Average_Write_Transaction_Waiting_Time>
 			</SSDDevice.IO_Stream>
 			<SSDDevice.IO_Stream>
 					 <Stream_ID>2</Stream_ID>
-					 <Average_Read_Transaction_Turnaround_Time>5392</Average_Read_Transaction_Turnaround_Time>
-					 <Average_Read_Transaction_Execution_Time>77</Average_Read_Transaction_Execution_Time>
-					 <Average_Read_Transaction_Transfer_Time>16</Average_Read_Transaction_Transfer_Time>
-					 <Average_Read_Transaction_Waiting_Time>5298</Average_Read_Transaction_Waiting_Time>
-					 <Average_Write_Transaction_Turnaround_Time>219485</Average_Write_Transaction_Turnaround_Time>
+					 <Average_Read_Transaction_Turnaround_Time>932</Average_Read_Transaction_Turnaround_Time>
+					 <Average_Read_Transaction_Execution_Time>83</Average_Read_Transaction_Execution_Time>
+					 <Average_Read_Transaction_Transfer_Time>20</Average_Read_Transaction_Transfer_Time>
+					 <Average_Read_Transaction_Waiting_Time>828</Average_Read_Transaction_Waiting_Time>
+					 <Average_Write_Transaction_Turnaround_Time>75675</Average_Write_Transaction_Turnaround_Time>
 					 <Average_Write_Transaction_Execution_Time>750</Average_Write_Transaction_Execution_Time>
-					 <Average_Write_Transaction_Transfer_Time>21</Average_Write_Transaction_Transfer_Time>
-					 <Average_Write_Transaction_Waiting_Time>218714</Average_Write_Transaction_Waiting_Time>
+					 <Average_Write_Transaction_Transfer_Time>18</Average_Write_Transaction_Transfer_Time>
+					 <Average_Write_Transaction_Waiting_Time>74906</Average_Write_Transaction_Waiting_Time>
 			</SSDDevice.IO_Stream>
 		</SSDDevice.HostInterface>
-		<SSDDevice.FTL Issued_Flash_Read_CMD="8549522" Issued_Flash_Interleaved_Read_CMD="0" Issued_Flash_Multiplane_Read_CMD="554180" Issued_Flash_Copyback_Read_CMD="0" Issued_Flash_Multiplane_Copyback_Read_CMD="0" Issued_Flash_Program_CMD="2169761" Issued_Flash_Interleaved_Program_CMD="0" Issued_Flash_Multiplane_Program_CMD="312854" Issued_Flash_Interleaved_Multiplane_Program_CMD="0" Issued_Flash_Copyback_Program_CMD="0" Issued_Flash_Multiplane_Copyback_Program_CMD="0" Issued_Flash_Erase_CMD="0" Issued_Flash_Interleaved_Erase_CMD="0" Issued_Flash_Multiplane_Erase_CMD="0" Issued_Flash_Interleaved_Multiplane_Erase_CMD="0" Issued_Flash_Suspend_Program_CMD="0" Issued_Flash_Suspend_Erase_CMD="0" Issued_Flash_Read_CMD_For_Mapping="0" Issued_Flash_Program_CMD_For_Mapping="0" CMT_Hits="11585377" CMT_Hits_For_Read="8789908" CMT_Hits_For_Write="2795469" CMT_Misses="0" CMT_Misses_For_Read="0" CMT_Misses_For_Write="0" Total_CMT_Queries="11585377" Total_CMT_Queries_For_Reads="8789908" Total_CMT_Queries_For_Writes="2795469" Total_GC_Executions="0" Average_Page_Movement_For_GC="-nan" Total_WL_Executions="0" Average_Page_Movement_For_WL="-nan"/>
+		<SSDDevice.FTL Issued_Flash_Read_CMD="4316481" Issued_Flash_Interleaved_Read_CMD="0" Issued_Flash_Multiplane_Read_CMD="14078" Issued_Flash_Copyback_Read_CMD="0" Issued_Flash_Multiplane_Copyback_Read_CMD="0" Issued_Flash_Program_CMD="1616577" Issued_Flash_Interleaved_Program_CMD="0" Issued_Flash_Multiplane_Program_CMD="551903" Issued_Flash_Interleaved_Multiplane_Program_CMD="0" Issued_Flash_Copyback_Program_CMD="0" Issued_Flash_Multiplane_Copyback_Program_CMD="0" Issued_Flash_Erase_CMD="0" Issued_Flash_Interleaved_Erase_CMD="0" Issued_Flash_Multiplane_Erase_CMD="0" Issued_Flash_Interleaved_Multiplane_Erase_CMD="0" Issued_Flash_Suspend_Program_CMD="0" Issued_Flash_Suspend_Erase_CMD="0" Issued_Flash_Read_CMD_For_Mapping="0" Issued_Flash_Program_CMD_For_Mapping="0" CMT_Hits="6731902" CMT_Hits_For_Read="4011519" CMT_Hits_For_Write="2720383" CMT_Misses="0" CMT_Misses_For_Read="0" CMT_Misses_For_Write="0" Total_CMT_Queries="6731902" Total_CMT_Queries_For_Reads="4011519" Total_CMT_Queries_For_Writes="2720383" Total_GC_Executions="0" Average_Page_Movement_For_GC="-nan" Total_WL_Executions="0" Average_Page_Movement_For_WL="-nan"/>
 		<SSDDevice.TSU>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@0" No_Of_Transactions_Enqueued="66942" No_Of_Transactions_Dequeued="66942" Avg_Queue_Length="0.158129" Max_Queue_Length="153" STDev_Queue_Length="1.949789" Avg_Transaction_Waiting_Time="689" Max_Transaction_Waiting_Time="18289"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@1" No_Of_Transactions_Enqueued="64287" No_Of_Transactions_Dequeued="64287" Avg_Queue_Length="0.133660" Max_Queue_Length="165" STDev_Queue_Length="1.711946" Avg_Transaction_Waiting_Time="606" Max_Transaction_Waiting_Time="18495"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@2" No_Of_Transactions_Enqueued="92744" No_Of_Transactions_Dequeued="92744" Avg_Queue_Length="0.205927" Max_Queue_Length="155" STDev_Queue_Length="2.556055" Avg_Transaction_Waiting_Time="647" Max_Transaction_Waiting_Time="19524"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@3" No_Of_Transactions_Enqueued="55840" No_Of_Transactions_Dequeued="55840" Avg_Queue_Length="0.139819" Max_Queue_Length="141" STDev_Queue_Length="1.654570" Avg_Transaction_Waiting_Time="730" Max_Transaction_Waiting_Time="16866"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@0" No_Of_Transactions_Enqueued="61407" No_Of_Transactions_Dequeued="61407" Avg_Queue_Length="0.132492" Max_Queue_Length="162" STDev_Queue_Length="1.681375" Avg_Transaction_Waiting_Time="629" Max_Transaction_Waiting_Time="18980"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@1" No_Of_Transactions_Enqueued="61611" No_Of_Transactions_Dequeued="61611" Avg_Queue_Length="0.165803" Max_Queue_Length="172" STDev_Queue_Length="2.168327" Avg_Transaction_Waiting_Time="785" Max_Transaction_Waiting_Time="19857"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@2" No_Of_Transactions_Enqueued="61848" No_Of_Transactions_Dequeued="61848" Avg_Queue_Length="0.139725" Max_Queue_Length="145" STDev_Queue_Length="1.676966" Avg_Transaction_Waiting_Time="659" Max_Transaction_Waiting_Time="17023"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@3" No_Of_Transactions_Enqueued="65825" No_Of_Transactions_Dequeued="65825" Avg_Queue_Length="0.162843" Max_Queue_Length="133" STDev_Queue_Length="1.871257" Avg_Transaction_Waiting_Time="721" Max_Transaction_Waiting_Time="15307"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@0" No_Of_Transactions_Enqueued="809471" No_Of_Transactions_Dequeued="809471" Avg_Queue_Length="16.864215" Max_Queue_Length="746" STDev_Queue_Length="460.304097" Avg_Transaction_Waiting_Time="6077" Max_Transaction_Waiting_Time="134697"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@1" No_Of_Transactions_Enqueued="755949" No_Of_Transactions_Dequeued="755949" Avg_Queue_Length="18.225209" Max_Queue_Length="668" STDev_Queue_Length="470.691259" Avg_Transaction_Waiting_Time="7033" Max_Transaction_Waiting_Time="120133"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@2" No_Of_Transactions_Enqueued="709448" No_Of_Transactions_Dequeued="709448" Avg_Queue_Length="6.212076" Max_Queue_Length="432" STDev_Queue_Length="128.966798" Avg_Transaction_Waiting_Time="2554" Max_Transaction_Waiting_Time="42056"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@3" No_Of_Transactions_Enqueued="712684" No_Of_Transactions_Dequeued="712684" Avg_Queue_Length="7.007209" Max_Queue_Length="420" STDev_Queue_Length="143.434803" Avg_Transaction_Waiting_Time="2868" Max_Transaction_Waiting_Time="41637"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@0" No_Of_Transactions_Enqueued="1544338" No_Of_Transactions_Dequeued="1544338" Avg_Queue_Length="44.648067" Max_Queue_Length="739" STDev_Queue_Length="1212.917928" Avg_Transaction_Waiting_Time="8433" Max_Transaction_Waiting_Time="118305"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@1" No_Of_Transactions_Enqueued="1509527" No_Of_Transactions_Dequeued="1509527" Avg_Queue_Length="47.619498" Max_Queue_Length="841" STDev_Queue_Length="1380.146024" Avg_Transaction_Waiting_Time="9202" Max_Transaction_Waiting_Time="133122"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@2" No_Of_Transactions_Enqueued="1523471" No_Of_Transactions_Dequeued="1523471" Avg_Queue_Length="53.679832" Max_Queue_Length="689" STDev_Queue_Length="1408.010666" Avg_Transaction_Waiting_Time="10278" Max_Transaction_Waiting_Time="127178"/>
-			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@3" No_Of_Transactions_Enqueued="1562490" No_Of_Transactions_Dequeued="1562490" Avg_Queue_Length="56.744446" Max_Queue_Length="835" STDev_Queue_Length="1638.727991" Avg_Transaction_Waiting_Time="10594" Max_Transaction_Waiting_Time="138008"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@0" No_Of_Transactions_Enqueued="119087" No_Of_Transactions_Dequeued="119087" Avg_Queue_Length="3.805064" Max_Queue_Length="228" STDev_Queue_Length="57.330225" Avg_Transaction_Waiting_Time="9321" Max_Transaction_Waiting_Time="1157264"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@1" No_Of_Transactions_Enqueued="119524" No_Of_Transactions_Dequeued="119524" Avg_Queue_Length="8.276243" Max_Queue_Length="467" STDev_Queue_Length="178.660156" Avg_Transaction_Waiting_Time="20199" Max_Transaction_Waiting_Time="1309606"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@2" No_Of_Transactions_Enqueued="152190" No_Of_Transactions_Dequeued="152190" Avg_Queue_Length="14.928255" Max_Queue_Length="273" STDev_Queue_Length="246.206067" Avg_Transaction_Waiting_Time="28615" Max_Transaction_Waiting_Time="1097861"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@3" No_Of_Transactions_Enqueued="128449" No_Of_Transactions_Dequeued="128449" Avg_Queue_Length="7.738387" Max_Queue_Length="419" STDev_Queue_Length="158.212372" Avg_Transaction_Waiting_Time="17574" Max_Transaction_Waiting_Time="1104613"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@0" No_Of_Transactions_Enqueued="108706" No_Of_Transactions_Dequeued="108706" Avg_Queue_Length="3.593270" Max_Queue_Length="255" STDev_Queue_Length="57.268183" Avg_Transaction_Waiting_Time="9642" Max_Transaction_Waiting_Time="267483"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@1" No_Of_Transactions_Enqueued="104539" No_Of_Transactions_Dequeued="104539" Avg_Queue_Length="3.904381" Max_Queue_Length="423" STDev_Queue_Length="80.206847" Avg_Transaction_Waiting_Time="10895" Max_Transaction_Waiting_Time="284247"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@2" No_Of_Transactions_Enqueued="129322" No_Of_Transactions_Dequeued="129322" Avg_Queue_Length="4.065931" Max_Queue_Length="219" STDev_Queue_Length="60.034018" Avg_Transaction_Waiting_Time="9171" Max_Transaction_Waiting_Time="320654"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@3" No_Of_Transactions_Enqueued="128327" No_Of_Transactions_Dequeued="128327" Avg_Queue_Length="5.746656" Max_Queue_Length="403" STDev_Queue_Length="115.220766" Avg_Transaction_Waiting_Time="13063" Max_Transaction_Waiting_Time="396514"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@0" No_Of_Transactions_Enqueued="304515" No_Of_Transactions_Dequeued="304515" Avg_Queue_Length="300.103391" Max_Queue_Length="1225" STDev_Queue_Length="10499.340510" Avg_Transaction_Waiting_Time="287498" Max_Transaction_Waiting_Time="11592680"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@1" No_Of_Transactions_Enqueued="202031" No_Of_Transactions_Dequeued="202031" Avg_Queue_Length="62.229373" Max_Queue_Length="923" STDev_Queue_Length="1889.563383" Avg_Transaction_Waiting_Time="89856" Max_Transaction_Waiting_Time="6056390"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@2" No_Of_Transactions_Enqueued="218752" No_Of_Transactions_Dequeued="218752" Avg_Queue_Length="57.791726" Max_Queue_Length="952" STDev_Queue_Length="1782.201314" Avg_Transaction_Waiting_Time="77070" Max_Transaction_Waiting_Time="5668648"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@3" No_Of_Transactions_Enqueued="231715" No_Of_Transactions_Dequeued="231715" Avg_Queue_Length="110.568073" Max_Queue_Length="1101" STDev_Queue_Length="3667.134021" Avg_Transaction_Waiting_Time="139202" Max_Transaction_Waiting_Time="7265610"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@0" No_Of_Transactions_Enqueued="238503" No_Of_Transactions_Dequeued="238503" Avg_Queue_Length="335.627896" Max_Queue_Length="1057" STDev_Queue_Length="10906.624298" Avg_Transaction_Waiting_Time="410522" Max_Transaction_Waiting_Time="13787920"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@1" No_Of_Transactions_Enqueued="186237" No_Of_Transactions_Dequeued="186237" Avg_Queue_Length="183.678632" Max_Queue_Length="971" STDev_Queue_Length="5720.644038" Avg_Transaction_Waiting_Time="287716" Max_Transaction_Waiting_Time="8554699"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@2" No_Of_Transactions_Enqueued="200164" No_Of_Transactions_Dequeued="200164" Avg_Queue_Length="216.289482" Max_Queue_Length="999" STDev_Queue_Length="6832.836517" Avg_Transaction_Waiting_Time="315226" Max_Transaction_Waiting_Time="10789352"/>
-			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@3" No_Of_Transactions_Enqueued="223408" No_Of_Transactions_Dequeued="223408" Avg_Queue_Length="347.554101" Max_Queue_Length="1353" STDev_Queue_Length="12779.414919" Avg_Transaction_Waiting_Time="453833" Max_Transaction_Waiting_Time="14357061"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@0" No_Of_Transactions_Enqueued="406701" No_Of_Transactions_Dequeued="406701" Avg_Queue_Length="1.753865" Max_Queue_Length="433" STDev_Queue_Length="36.456840" Avg_Transaction_Waiting_Time="560" Max_Transaction_Waiting_Time="48674"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@1" No_Of_Transactions_Enqueued="404601" No_Of_Transactions_Dequeued="404601" Avg_Queue_Length="1.705582" Max_Queue_Length="368" STDev_Queue_Length="32.678186" Avg_Transaction_Waiting_Time="547" Max_Transaction_Waiting_Time="44884"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@2" No_Of_Transactions_Enqueued="413696" No_Of_Transactions_Dequeued="413696" Avg_Queue_Length="2.292147" Max_Queue_Length="452" STDev_Queue_Length="48.680400" Avg_Transaction_Waiting_Time="720" Max_Transaction_Waiting_Time="50809"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@0@3" No_Of_Transactions_Enqueued="404952" No_Of_Transactions_Dequeued="404952" Avg_Queue_Length="1.647656" Max_Queue_Length="362" STDev_Queue_Length="31.309556" Avg_Transaction_Waiting_Time="528" Max_Transaction_Waiting_Time="41425"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@0" No_Of_Transactions_Enqueued="399483" No_Of_Transactions_Dequeued="399483" Avg_Queue_Length="1.501809" Max_Queue_Length="318" STDev_Queue_Length="26.743509" Avg_Transaction_Waiting_Time="488" Max_Transaction_Waiting_Time="39893"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@1" No_Of_Transactions_Enqueued="399797" No_Of_Transactions_Dequeued="399797" Avg_Queue_Length="1.631491" Max_Queue_Length="327" STDev_Queue_Length="29.461568" Avg_Transaction_Waiting_Time="530" Max_Transaction_Waiting_Time="42202"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@2" No_Of_Transactions_Enqueued="402931" No_Of_Transactions_Dequeued="402931" Avg_Queue_Length="1.635589" Max_Queue_Length="333" STDev_Queue_Length="29.805951" Avg_Transaction_Waiting_Time="527" Max_Transaction_Waiting_Time="41588"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@1@3" No_Of_Transactions_Enqueued="398770" No_Of_Transactions_Dequeued="398770" Avg_Queue_Length="1.620902" Max_Queue_Length="337" STDev_Queue_Length="29.715796" Avg_Transaction_Waiting_Time="528" Max_Transaction_Waiting_Time="41016"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@0" No_Of_Transactions_Enqueued="145739" No_Of_Transactions_Dequeued="145739" Avg_Queue_Length="0.599292" Max_Queue_Length="223" STDev_Queue_Length="8.929858" Avg_Transaction_Waiting_Time="534" Max_Transaction_Waiting_Time="28732"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@1" No_Of_Transactions_Enqueued="140176" No_Of_Transactions_Dequeued="140176" Avg_Queue_Length="0.430356" Max_Queue_Length="223" STDev_Queue_Length="6.412786" Avg_Transaction_Waiting_Time="399" Max_Transaction_Waiting_Time="26871"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@2" No_Of_Transactions_Enqueued="143637" No_Of_Transactions_Dequeued="143637" Avg_Queue_Length="0.523024" Max_Queue_Length="220" STDev_Queue_Length="7.740633" Avg_Transaction_Waiting_Time="473" Max_Transaction_Waiting_Time="28532"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@2@3" No_Of_Transactions_Enqueued="139176" No_Of_Transactions_Dequeued="139176" Avg_Queue_Length="0.429185" Max_Queue_Length="221" STDev_Queue_Length="6.366469" Avg_Transaction_Waiting_Time="400" Max_Transaction_Waiting_Time="27731"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@0" No_Of_Transactions_Enqueued="136637" No_Of_Transactions_Dequeued="136637" Avg_Queue_Length="0.437931" Max_Queue_Length="220" STDev_Queue_Length="6.481369" Avg_Transaction_Waiting_Time="416" Max_Transaction_Waiting_Time="27323"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@1" No_Of_Transactions_Enqueued="138413" No_Of_Transactions_Dequeued="138413" Avg_Queue_Length="0.962421" Max_Queue_Length="293" STDev_Queue_Length="16.446159" Avg_Transaction_Waiting_Time="903" Max_Transaction_Waiting_Time="36122"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@2" No_Of_Transactions_Enqueued="134418" No_Of_Transactions_Dequeued="134418" Avg_Queue_Length="0.404400" Max_Queue_Length="228" STDev_Queue_Length="6.093443" Avg_Transaction_Waiting_Time="391" Max_Transaction_Waiting_Time="25919"/>
+			<SSDDevice.TSU.User_Read_TR_Queue Name="User_Read_TR_Queue@3@3" No_Of_Transactions_Enqueued="135510" No_Of_Transactions_Dequeued="135510" Avg_Queue_Length="0.973569" Max_Queue_Length="297" STDev_Queue_Length="16.750188" Avg_Transaction_Waiting_Time="933" Max_Transaction_Waiting_Time="37742"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@0" No_Of_Transactions_Enqueued="294677" No_Of_Transactions_Dequeued="294677" Avg_Queue_Length="249.622889" Max_Queue_Length="718" STDev_Queue_Length="6684.132168" Avg_Transaction_Waiting_Time="110102" Max_Transaction_Waiting_Time="1054501"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@1" No_Of_Transactions_Enqueued="295103" No_Of_Transactions_Dequeued="295103" Avg_Queue_Length="228.327151" Max_Queue_Length="706" STDev_Queue_Length="6062.518899" Avg_Transaction_Waiting_Time="100563" Max_Transaction_Waiting_Time="845792"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@2" No_Of_Transactions_Enqueued="302441" No_Of_Transactions_Dequeued="302441" Avg_Queue_Length="301.457826" Max_Queue_Length="750" STDev_Queue_Length="8250.270282" Avg_Transaction_Waiting_Time="129552" Max_Transaction_Waiting_Time="1047717"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@0@3" No_Of_Transactions_Enqueued="295341" No_Of_Transactions_Dequeued="295341" Avg_Queue_Length="238.752008" Max_Queue_Length="754" STDev_Queue_Length="6551.573825" Avg_Transaction_Waiting_Time="105070" Max_Transaction_Waiting_Time="886145"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@0" No_Of_Transactions_Enqueued="293933" No_Of_Transactions_Dequeued="293933" Avg_Queue_Length="253.795877" Max_Queue_Length="596" STDev_Queue_Length="6190.765920" Avg_Transaction_Waiting_Time="112226" Max_Transaction_Waiting_Time="869422"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@1" No_Of_Transactions_Enqueued="290531" No_Of_Transactions_Dequeued="290531" Avg_Queue_Length="230.309888" Max_Queue_Length="491" STDev_Queue_Length="5098.147688" Avg_Transaction_Waiting_Time="103033" Max_Transaction_Waiting_Time="854227"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@2" No_Of_Transactions_Enqueued="296571" No_Of_Transactions_Dequeued="296571" Avg_Queue_Length="278.412630" Max_Queue_Length="602" STDev_Queue_Length="6825.387279" Avg_Transaction_Waiting_Time="122016" Max_Transaction_Waiting_Time="927179"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@1@3" No_Of_Transactions_Enqueued="291137" No_Of_Transactions_Dequeued="291137" Avg_Queue_Length="230.726003" Max_Queue_Length="505" STDev_Queue_Length="5179.811045" Avg_Transaction_Waiting_Time="103004" Max_Transaction_Waiting_Time="890942"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@0" No_Of_Transactions_Enqueued="51505" No_Of_Transactions_Dequeued="51505" Avg_Queue_Length="1.056427" Max_Queue_Length="142" STDev_Queue_Length="12.545317" Avg_Transaction_Waiting_Time="2665" Max_Transaction_Waiting_Time="262197"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@1" No_Of_Transactions_Enqueued="45008" No_Of_Transactions_Dequeued="45008" Avg_Queue_Length="0.830575" Max_Queue_Length="114" STDev_Queue_Length="8.829890" Avg_Transaction_Waiting_Time="2398" Max_Transaction_Waiting_Time="137051"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@2" No_Of_Transactions_Enqueued="46781" No_Of_Transactions_Dequeued="46781" Avg_Queue_Length="0.921641" Max_Queue_Length="117" STDev_Queue_Length="9.927230" Avg_Transaction_Waiting_Time="2560" Max_Transaction_Waiting_Time="253397"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@2@3" No_Of_Transactions_Enqueued="44979" No_Of_Transactions_Dequeued="44979" Avg_Queue_Length="0.700875" Max_Queue_Length="133" STDev_Queue_Length="8.053199" Avg_Transaction_Waiting_Time="2025" Max_Transaction_Waiting_Time="144889"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@0" No_Of_Transactions_Enqueued="44523" No_Of_Transactions_Dequeued="44523" Avg_Queue_Length="0.435608" Max_Queue_Length="119" STDev_Queue_Length="4.733004" Avg_Transaction_Waiting_Time="1271" Max_Transaction_Waiting_Time="194777"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@1" No_Of_Transactions_Enqueued="44961" No_Of_Transactions_Dequeued="44961" Avg_Queue_Length="0.514464" Max_Queue_Length="116" STDev_Queue_Length="5.518094" Avg_Transaction_Waiting_Time="1487" Max_Transaction_Waiting_Time="426547"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@2" No_Of_Transactions_Enqueued="41986" No_Of_Transactions_Dequeued="41986" Avg_Queue_Length="0.387548" Max_Queue_Length="118" STDev_Queue_Length="4.193011" Avg_Transaction_Waiting_Time="1199" Max_Transaction_Waiting_Time="135971"/>
+			<SSDDevice.TSU.User_Write_TR_Queue Name="User_Write_TR_Queue@3@3" No_Of_Transactions_Enqueued="40906" No_Of_Transactions_Dequeued="40906" Avg_Queue_Length="0.386030" Max_Queue_Length="107" STDev_Queue_Length="3.975492" Avg_Transaction_Waiting_Time="1226" Max_Transaction_Waiting_Time="416896"/>
 			<SSDDevice.TSU.Mapping_Read_TR_Queue Name="Mapping_Read_TR_Queue@0@0" No_Of_Transactions_Enqueued="0" No_Of_Transactions_Dequeued="0" Avg_Queue_Length="0.000000" Max_Queue_Length="0" STDev_Queue_Length="0.000000" Avg_Transaction_Waiting_Time="9223372036854775808" Max_Transaction_Waiting_Time="0"/>
 			<SSDDevice.TSU.Mapping_Read_TR_Queue Name="Mapping_Read_TR_Queue@0@1" No_Of_Transactions_Enqueued="0" No_Of_Transactions_Dequeued="0" Avg_Queue_Length="0.000000" Max_Queue_Length="0" STDev_Queue_Length="0.000000" Avg_Transaction_Waiting_Time="9223372036854775808" Max_Transaction_Waiting_Time="0"/>
 			<SSDDevice.TSU.Mapping_Read_TR_Queue Name="Mapping_Read_TR_Queue@0@2" No_Of_Transactions_Enqueued="0" No_Of_Transactions_Dequeued="0" Avg_Queue_Length="0.000000" Max_Queue_Length="0" STDev_Queue_Length="0.000000" Avg_Transaction_Waiting_Time="9223372036854775808" Max_Transaction_Waiting_Time="0"/>
@@ -217,21 +217,21 @@
 			<SSDDevice.TSU.GC_Erase_TR_Queue Name="GC_Erase_TR_Queue@3@2" No_Of_Transactions_Enqueued="0" No_Of_Transactions_Dequeued="0" Avg_Queue_Length="0.000000" Max_Queue_Length="0" STDev_Queue_Length="0.000000" Avg_Transaction_Waiting_Time="9223372036854775808" Max_Transaction_Waiting_Time="0"/>
 			<SSDDevice.TSU.GC_Erase_TR_Queue Name="GC_Erase_TR_Queue@3@3" No_Of_Transactions_Enqueued="0" No_Of_Transactions_Dequeued="0" Avg_Queue_Length="0.000000" Max_Queue_Length="0" STDev_Queue_Length="0.000000" Avg_Transaction_Waiting_Time="9223372036854775808" Max_Transaction_Waiting_Time="0"/>
 		</SSDDevice.TSU>
-		<SSDDevice.FlashChips ID="@0@0" Fraction_of_Time_in_Execution="0.236796" Fraction_of_Time_in_DataXfer="0.011795" Fraction_of_Time_in_DataXfer_and_Execution="0.002470" Fraction_of_Time_Idle="0.985735"/>
-		<SSDDevice.FlashChips ID="@0@1" Fraction_of_Time_in_Execution="0.229837" Fraction_of_Time_in_DataXfer="0.011592" Fraction_of_Time_in_DataXfer_and_Execution="0.002452" Fraction_of_Time_Idle="0.985957"/>
-		<SSDDevice.FlashChips ID="@0@2" Fraction_of_Time_in_Execution="0.304987" Fraction_of_Time_in_DataXfer="0.014715" Fraction_of_Time_in_DataXfer_and_Execution="0.002762" Fraction_of_Time_Idle="0.982523"/>
-		<SSDDevice.FlashChips ID="@0@3" Fraction_of_Time_in_Execution="0.250248" Fraction_of_Time_in_DataXfer="0.011136" Fraction_of_Time_in_DataXfer_and_Execution="0.002399" Fraction_of_Time_Idle="0.986465"/>
-		<SSDDevice.FlashChips ID="@1@0" Fraction_of_Time_in_Execution="0.219025" Fraction_of_Time_in_DataXfer="0.010948" Fraction_of_Time_in_DataXfer_and_Execution="0.002214" Fraction_of_Time_Idle="0.986838"/>
-		<SSDDevice.FlashChips ID="@1@1" Fraction_of_Time_in_Execution="0.207537" Fraction_of_Time_in_DataXfer="0.010508" Fraction_of_Time_in_DataXfer_and_Execution="0.002158" Fraction_of_Time_Idle="0.987334"/>
-		<SSDDevice.FlashChips ID="@1@2" Fraction_of_Time_in_Execution="0.256472" Fraction_of_Time_in_DataXfer="0.011660" Fraction_of_Time_in_DataXfer_and_Execution="0.002502" Fraction_of_Time_Idle="0.985838"/>
-		<SSDDevice.FlashChips ID="@1@3" Fraction_of_Time_in_Execution="0.255635" Fraction_of_Time_in_DataXfer="0.012541" Fraction_of_Time_in_DataXfer_and_Execution="0.002556" Fraction_of_Time_Idle="0.984903"/>
-		<SSDDevice.FlashChips ID="@2@0" Fraction_of_Time_in_Execution="0.515421" Fraction_of_Time_in_DataXfer="0.064647" Fraction_of_Time_in_DataXfer_and_Execution="0.007669" Fraction_of_Time_Idle="0.927683"/>
-		<SSDDevice.FlashChips ID="@2@1" Fraction_of_Time_in_Execution="0.376658" Fraction_of_Time_in_DataXfer="0.054566" Fraction_of_Time_in_DataXfer_and_Execution="0.006057" Fraction_of_Time_Idle="0.939377"/>
-		<SSDDevice.FlashChips ID="@2@2" Fraction_of_Time_in_Execution="0.414339" Fraction_of_Time_in_DataXfer="0.055626" Fraction_of_Time_in_DataXfer_and_Execution="0.006676" Fraction_of_Time_Idle="0.937698"/>
-		<SSDDevice.FlashChips ID="@2@3" Fraction_of_Time_in_Execution="0.427941" Fraction_of_Time_in_DataXfer="0.056913" Fraction_of_Time_in_DataXfer_and_Execution="0.006787" Fraction_of_Time_Idle="0.936300"/>
-		<SSDDevice.FlashChips ID="@3@0" Fraction_of_Time_in_Execution="0.533213" Fraction_of_Time_in_DataXfer="0.125495" Fraction_of_Time_in_DataXfer_and_Execution="0.007098" Fraction_of_Time_Idle="0.867407"/>
-		<SSDDevice.FlashChips ID="@3@1" Fraction_of_Time_in_Execution="0.457998" Fraction_of_Time_in_DataXfer="0.121294" Fraction_of_Time_in_DataXfer_and_Execution="0.005965" Fraction_of_Time_Idle="0.872741"/>
-		<SSDDevice.FlashChips ID="@3@2" Fraction_of_Time_in_Execution="0.480657" Fraction_of_Time_in_DataXfer="0.123117" Fraction_of_Time_in_DataXfer_and_Execution="0.006170" Fraction_of_Time_Idle="0.870712"/>
-		<SSDDevice.FlashChips ID="@3@3" Fraction_of_Time_in_Execution="0.525828" Fraction_of_Time_in_DataXfer="0.125215" Fraction_of_Time_in_DataXfer_and_Execution="0.006502" Fraction_of_Time_Idle="0.868284"/>
+		<SSDDevice.FlashChips ID="@0@0" Fraction_of_Time_in_Execution="0.849917" Fraction_of_Time_in_DataXfer="0.100457" Fraction_of_Time_in_DataXfer_and_Execution="0.021070" Fraction_of_Time_Idle="0.878474"/>
+		<SSDDevice.FlashChips ID="@0@1" Fraction_of_Time_in_Execution="0.849584" Fraction_of_Time_in_DataXfer="0.100274" Fraction_of_Time_in_DataXfer_and_Execution="0.021064" Fraction_of_Time_Idle="0.878661"/>
+		<SSDDevice.FlashChips ID="@0@2" Fraction_of_Time_in_Execution="0.848138" Fraction_of_Time_in_DataXfer="0.102003" Fraction_of_Time_in_DataXfer_and_Execution="0.021331" Fraction_of_Time_Idle="0.876666"/>
+		<SSDDevice.FlashChips ID="@0@3" Fraction_of_Time_in_Execution="0.849913" Fraction_of_Time_in_DataXfer="0.100170" Fraction_of_Time_in_DataXfer_and_Execution="0.020964" Fraction_of_Time_Idle="0.878867"/>
+		<SSDDevice.FlashChips ID="@1@0" Fraction_of_Time_in_Execution="0.835950" Fraction_of_Time_in_DataXfer="0.100089" Fraction_of_Time_in_DataXfer_and_Execution="0.021143" Fraction_of_Time_Idle="0.878768"/>
+		<SSDDevice.FlashChips ID="@1@1" Fraction_of_Time_in_Execution="0.835460" Fraction_of_Time_in_DataXfer="0.099586" Fraction_of_Time_in_DataXfer_and_Execution="0.020875" Fraction_of_Time_Idle="0.879539"/>
+		<SSDDevice.FlashChips ID="@1@2" Fraction_of_Time_in_Execution="0.835469" Fraction_of_Time_in_DataXfer="0.100597" Fraction_of_Time_in_DataXfer_and_Execution="0.021081" Fraction_of_Time_Idle="0.878321"/>
+		<SSDDevice.FlashChips ID="@1@3" Fraction_of_Time_in_Execution="0.835861" Fraction_of_Time_in_DataXfer="0.099496" Fraction_of_Time_in_DataXfer_and_Execution="0.020878" Fraction_of_Time_Idle="0.879627"/>
+		<SSDDevice.FlashChips ID="@2@0" Fraction_of_Time_in_Execution="0.315813" Fraction_of_Time_in_DataXfer="0.027779" Fraction_of_Time_in_DataXfer_and_Execution="0.001332" Fraction_of_Time_Idle="0.970889"/>
+		<SSDDevice.FlashChips ID="@2@1" Fraction_of_Time_in_Execution="0.288891" Fraction_of_Time_in_DataXfer="0.026519" Fraction_of_Time_in_DataXfer_and_Execution="0.001040" Fraction_of_Time_Idle="0.972441"/>
+		<SSDDevice.FlashChips ID="@2@2" Fraction_of_Time_in_Execution="0.297922" Fraction_of_Time_in_DataXfer="0.026984" Fraction_of_Time_in_DataXfer_and_Execution="0.001096" Fraction_of_Time_Idle="0.971919"/>
+		<SSDDevice.FlashChips ID="@2@3" Fraction_of_Time_in_Execution="0.288014" Fraction_of_Time_in_DataXfer="0.026372" Fraction_of_Time_in_DataXfer_and_Execution="0.001043" Fraction_of_Time_Idle="0.972585"/>
+		<SSDDevice.FlashChips ID="@3@0" Fraction_of_Time_in_Execution="0.283240" Fraction_of_Time_in_DataXfer="0.026268" Fraction_of_Time_in_DataXfer_and_Execution="0.001061" Fraction_of_Time_Idle="0.972671"/>
+		<SSDDevice.FlashChips ID="@3@1" Fraction_of_Time_in_Execution="0.286405" Fraction_of_Time_in_DataXfer="0.026773" Fraction_of_Time_in_DataXfer_and_Execution="0.001062" Fraction_of_Time_Idle="0.972165"/>
+		<SSDDevice.FlashChips ID="@3@2" Fraction_of_Time_in_Execution="0.272931" Fraction_of_Time_in_DataXfer="0.025854" Fraction_of_Time_in_DataXfer_and_Execution="0.000932" Fraction_of_Time_Idle="0.973214"/>
+		<SSDDevice.FlashChips ID="@3@3" Fraction_of_Time_in_Execution="0.267243" Fraction_of_Time_in_DataXfer="0.025926" Fraction_of_Time_in_DataXfer_and_Execution="0.000928" Fraction_of_Time_Idle="0.973145"/>
 	</SSDDevice>
 </MQSim_Results>

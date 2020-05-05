@@ -15,7 +15,7 @@
 			 <IO_Queue_Depth>65535</IO_Queue_Depth>
 			 <Queue_Fetch_Size>512</Queue_Fetch_Size>
 			 <Caching_Mechanism>ADVANCED</Caching_Mechanism>
-			 <Data_Cache_Sharing_Mode>SHARED</Data_Cache_Sharing_Mode>
+			 <Data_Cache_Sharing_Mode>EQUAL_PARTITIONING</Data_Cache_Sharing_Mode>
 			 <Data_Cache_Capacity>268435456</Data_Cache_Capacity>
 			 <Data_Cache_DRAM_Row_Size>8192</Data_Cache_DRAM_Row_Size>
 			 <Data_Cache_DRAM_Data_Rate>100</Data_Cache_DRAM_Data_Rate>
@@ -24,7 +24,7 @@
 			 <Data_Cache_DRAM_tCL>13</Data_Cache_DRAM_tCL>
 			 <Data_Cache_DRAM_tRP>13</Data_Cache_DRAM_tRP>
 			 <Address_Mapping>PAGE_LEVEL</Address_Mapping>
-			 <Ideal_Mapping_Table>false</Ideal_Mapping_Table>
+			 <Ideal_Mapping_Table>true</Ideal_Mapping_Table>
 			 <CMT_Capacity>2097152</CMT_Capacity>
 			 <CMT_Sharing_Mode>SHARED</CMT_Sharing_Mode>
 			 <Plane_Allocation_Scheme>CWDP</Plane_Allocation_Scheme>
@@ -41,14 +41,14 @@
 			 <Preferred_suspend_erase_time_for_read>700000</Preferred_suspend_erase_time_for_read>
 			 <Preferred_suspend_erase_time_for_write>700000</Preferred_suspend_erase_time_for_write>
 			 <Preferred_suspend_write_time_for_read>100000</Preferred_suspend_write_time_for_read>
-			 <Flash_Channel_Count>8</Flash_Channel_Count>
+			 <Flash_Channel_Count>4</Flash_Channel_Count>
 			 <Flash_Channel_Width>1</Flash_Channel_Width>
 			 <Channel_Transfer_Rate>333</Channel_Transfer_Rate>
 			 <Chip_No_Per_Channel>4</Chip_No_Per_Channel>
 			 <Flash_Comm_Protocol>NVDDR2</Flash_Comm_Protocol>
 		<Flash_Parameter_Set>
 				 <Flash_Technology>MLC</Flash_Technology>
-				 <CMD_Suspension_Support>ERASE</CMD_Suspension_Support>
+				 <CMD_Suspension_Support>NONE</CMD_Suspension_Support>
 				 <Page_Read_Latency_LSB>75000</Page_Read_Latency_LSB>
 				 <Page_Read_Latency_CSB>75000</Page_Read_Latency_CSB>
 				 <Page_Read_Latency_MSB>75000</Page_Read_Latency_MSB>

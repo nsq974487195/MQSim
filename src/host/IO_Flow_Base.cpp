@@ -32,7 +32,7 @@ namespace Host_Components
 					available_command_ids.insert(cmdid);
 				}
 				for (uint16_t cmdid = 0; cmdid < nvme_submission_queue_size; cmdid++) {
-					request_queue_in_memory.push_back(t); // t是什么意思
+					request_queue_in_memory.push_back(t); // t是Host_IO_Request
 				}
 				nvme_queue_pair.Submission_queue_size = nvme_submission_queue_size;
 				nvme_queue_pair.Submission_queue_head = 0;
